@@ -3,12 +3,16 @@ import styled from 'styled-components'
 
 import {theme} from '../../theme/theme'
 
-export const SectionWrap = styled.section`
+interface SectionWrapProps {
+    img: string; // Определите тип img, например, string
+}
+
+export const SectionWrap = styled.section<SectionWrapProps>`
     display: flex;
     background: rgb(231,231,231);
     background: linear-gradient(45deg, rgba(231,231,231,0.9051995798319328) 50%, rgba(246,246,246,1) 100%);
     height: 673px;
-    background-image: url('/first.png');
+    background-image: url(${({img})=>img});
     background-repeat: no-repeat;
     padding: 0 15%;
 `
@@ -33,8 +37,6 @@ export const BannerWrap = styled.div`
 export const BannerContent = styled.div`
     display: flex;
     flex-direction: column;
-    width: 600px;
-    height: 300px;
     border: 1px dashed ${theme.palette.primary.main};
     border-radius: 10px;
     padding: 28px;

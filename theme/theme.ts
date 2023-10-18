@@ -11,17 +11,21 @@ export const theme = createTheme({
         common: {
             black: '#000',
             white: '#fff',
+            background: '#F6F6F6',
         },
         primary: {
             main: '#10AFAB',
         },
         text: {
-            primary: '#000', // Header font color
+            primary: '#000',
         },
-        // contentText: '#2e2e2e'
+        
     },
     typography: {
         fontFamily: 'Gilroy, sans-serif',
+        button: {
+            textTransform: 'none'
+        }
     },
     components: {
         MuiCssBaseline: {

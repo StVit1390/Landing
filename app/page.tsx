@@ -1,13 +1,14 @@
 'use client'
 // Core
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 
 // Styles
 import * as S from './styles'
 
 // View
-import {Header} from '../components/header'
+import { Header } from '../components/header'
 import { FirstSection } from '../components/firstSection'
+import { SecondSection } from '../components/secondSection'
 
 export default function Home() {
     const [mounted, setMounted] = useState(false)
@@ -17,6 +18,7 @@ export default function Home() {
     <S.Wrap style={{visibility: mounted ? 'visible' : 'hidden'}}>
       <Header />
       <FirstSection/>
+      <SecondSection />
     </S.Wrap>
   )
 }

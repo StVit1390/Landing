@@ -17,3 +17,13 @@ declare module '*.woff2' {
     const value: string
     export default value
 }
+
+declare module "styled-components" {
+    export interface DefaultTheme {
+        colors: {
+            primary: string;
+            secondary: string;
+        };
+        background: string;
+    }
+}

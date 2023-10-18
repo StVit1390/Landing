@@ -10,12 +10,6 @@ export const Lang:FC = () => {
     const [isOpen, setIsOpen] = useState(false)
     const langArr = ['EN','PL','UA']
 
-    console.log(
-        "lang", lang,
-        "isOpen", isOpen
-    );
-    
-
     return(
         <S.Lang onClick={()=> setIsOpen(true)}>
             {lang}

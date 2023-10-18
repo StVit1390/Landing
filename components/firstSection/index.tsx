@@ -1,19 +1,40 @@
 // Core
-import React, {FC} from "react";
+import React, {FC, useEffect, useState} from "react";
+
+// Tools
+import axios from "axios";
 
 // Styles
 import * as S from './styles'
 
 
 export const FirstSection:FC = () => {
+    const [data, setData] = useState({
+        coverImg:'',
+        title: '',
+        description: '',
+        btnName: '',
+    })
+
+    useEffect(() => {
+        axios.get(`${process.env.NEXT_PUBLIC_STRAPI_URL}/main-banners/?populate=*`).then((res: any) => {
+            setData({
+                coverImg: `http://localhost:1337${res.data.data[0].attributes.coverImage.data.attributes.url}`, 
+                title: res.data.data[0].attributes.tittle,
+                description: res.data.data[0].attributes.description,
+                btnName: res.data.data[0].attributes.btnName,
+            })
+        })
+    }, [])
+
     return (
-        <S.SectionWrap>
+        <S.SectionWrap img={data.coverImg}>
             <S.LeftSide>
                 <S.BannerWrap>
                     <S.BannerContent>
-                        <S.Tittle>Medical Aid Fund</S.Tittle>
-                        <S.Content>Our mission is to help those who help us</S.Content>
-                        <S.Help>I want to help</S.Help>
+                        <S.Tittle>{data.title}</S.Tittle>
+                        <S.Content>{data.description}</S.Content>
+                        <S.Help>{data.btnName}</S.Help>
                     </S.BannerContent>
                 </S.BannerWrap>
             </S.LeftSide>
