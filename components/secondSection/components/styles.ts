@@ -5,7 +5,7 @@ import React from "react";
 import { styled } from '@mui/system'
 
 // Theme
-import { theme } from '../../../theme/theme'
+import { palette } from '../../../theme/theme'
 
 interface CardProps {
     justify: boolean
@@ -16,13 +16,13 @@ export const Card = styled('div') <CardProps>`
     width: 100%;
     border-radius: 10px;
     padding: 20px;
-    background-color: ${theme.palette.common.background};
+    background-color: ${palette.palette.background.default};
     flex-direction: ${({ justify }) =>  justify ? 'row-reverse' : 'row' };
 `
 
 export const ImgWrap = styled('div')`
     width: 35%;
-    background-color: ${theme.palette.common.white};
+    background-color: ${palette.palette.common.white};
     padding: 20px;
     border-radius: 10px;
 `
@@ -71,7 +71,7 @@ export const TypographyWrap = styled('div')`
         height: 100%;
         width: 6px;
         border-radius: 10px;
-        background: ${theme.palette.primary.main};
+        background: ${({theme})=>theme.palette.primary.main};
         position: absolute;
         left: 0;
     }

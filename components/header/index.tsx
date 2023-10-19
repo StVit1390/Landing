@@ -10,6 +10,11 @@ import { Lang } from './components/lang';
 // Tools
 import axios from 'axios';
 
+// MUI
+import { Button } from '@mui/material';
+
+import ChatOutlinedIcon from '@mui/icons-material/ChatOutlined';
+
 
 export const Header:FC = () => {
 
@@ -26,6 +31,10 @@ export const Header:FC = () => {
             })
         })
     },[]) // Header reqest
+
+
+
+    
     
     return (
         <S.Header>
@@ -39,7 +48,7 @@ export const Header:FC = () => {
             </S.NavMenu>
             <S.ContactUsWrap>
                 <Lang />
-                <S.ContactUs>Support us</S.ContactUs>
+                <Button variant='contained' color='primary' size="large" endIcon={<ChatOutlinedIcon />}> Support us</Button>
             </S.ContactUsWrap>
         </S.Header>
     )

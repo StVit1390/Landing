@@ -5,7 +5,7 @@ import React, { FC } from 'react'
 import { Button, makeStyles } from '@mui/material'
 
 // Theme 
-import { theme } from '../../theme/theme'
+import { palette } from '../../theme/theme'
 
 interface BtnProps {
     children: string
@@ -15,10 +15,8 @@ interface BtnProps {
 
 export const Btn:FC<BtnProps> = ({children}) => {
 
-
-
     return (
-        <Button variant='contained' sx={{background: theme.palette.primary.main, padding: '22px 53px', textTransform: 'none', '&:hover': {background: theme.palette.primary.main}}}>
+        <Button variant='contained' sx={{ background: palette.palette.primary.main, padding: '22px 53px', textTransform: 'none', }}>
             {children}
         </Button>
     )

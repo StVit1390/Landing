@@ -52,7 +52,7 @@
     ],
     "paths": {
       "@/": [
-        "./src/"
+        "app"
       ]
     }
   },
@@ -62,9 +62,9 @@
     "/.tsx",
     ".next/types/**/.ts",
     "*/.d.ts",
-    "src/app/pages/api/test.ts",
-    "src/api/payment.js",
-    "src/app/api/checkout_sessions/checkout_sessions.js",
+    "app/app/pages/api/test.ts",
+    "app/api/payment.js",
+    "app/app/api/checkout_sessions/checkout_sessions.js",
     ".next/types/**/*.ts"
   ],
   "exclude": [

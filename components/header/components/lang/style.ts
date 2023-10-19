@@ -1,9 +1,11 @@
 // Core
 import styled from 'styled-components'
 
+// Colors
+import {palette} from '../../../../theme/theme'
+
 export const Lang = styled.div`
     display: flex;
-    
     height: 63px;
     width: 71px;
     background-color: #EBEBEB;

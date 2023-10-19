@@ -10,16 +10,26 @@ import { Header } from '../components/header'
 import { FirstSection } from '../components/firstSection'
 import { SecondSection } from '../components/secondSection'
 
+// MUI
+import { CssBaseline, ThemeProvider } from '@mui/material'
+
+import mainTheme from '../theme/theme'
+
 export default function Home() {
     const [mounted, setMounted] = useState(false)
     useEffect(()=>setMounted(true),[])
 
   return (
-    <S.Wrap style={{visibility: mounted ? 'visible' : 'hidden'}}>
-      <Header />
-      <FirstSection/>
-      <SecondSection />
-    </S.Wrap>
+
+    <ThemeProvider theme={mainTheme}>
+        <CssBaseline />
+        <S.Wrap style={{ visibility: mounted ? 'visible' : 'hidden' }}>
+          <Header />
+          <FirstSection />
+          <SecondSection />
+        </S.Wrap>
+    </ThemeProvider> 
+   
   )
 }
 

@@ -1,7 +1,7 @@
 // Core
 import styled from 'styled-components'
 
-import {theme} from '../../theme/theme'
+import {palette} from '../../theme/theme'
 
 interface SectionWrapProps {
     img: string; // Определите тип img, например, string
@@ -29,7 +29,7 @@ export const BannerWrap = styled.div`
     display: flex;
     padding: 20px;
     border-radius: 10px;
-    background: ${theme.palette.common.white};
+    background: ${palette.palette.common.white};
     align-items: center;
     justify-content: center;
 `
@@ -37,7 +37,7 @@ export const BannerWrap = styled.div`
 export const BannerContent = styled.div`
     display: flex;
     flex-direction: column;
-    border: 1px dashed ${theme.palette.primary.main};
+    border: 1px dashed ${palette.palette.primary.main};
     border-radius: 10px;
     padding: 28px;
 `
@@ -59,10 +59,10 @@ export const Content = styled.p`
 export const Help = styled.a`
     cursor: pointer;
     text-decoration: none;
-    background-color: #10AFAB;
+    background-color: ${palette.palette.primary.main};
     padding: 22px 50px;
     width: fit-content;
-    color: #fff;
+    color: ${palette.palette.common.white};
     border-radius: 10px;
     margin-top: 30px;
 `

@@ -2,12 +2,12 @@
 import styled from 'styled-components'
 
 // Theme
-import {theme} from '../../theme/theme'
+import { palette } from '../../theme/theme'
 
 export const Header = styled.div`
     display: flex;
     height: 125px;
-    background: ${theme.palette.common.white};
+    background: ${palette.palette.common.white};
     padding: 0 15%;
     justify-content: space-between;
 `
@@ -23,14 +23,13 @@ export const LogoWrap = styled.div`
 export const Logo  = styled.img`
     position: absolute;
     top: 15px;
-    border: 10px solid ${theme.palette.common.white};
+    border: 10px solid ${palette.palette.common.white};
     border-radius: 10px;
 `
 
 export const NavMenu = styled.div`
     display: flex;
     align-items: center;
-    /* font-Family: 'Gilroy'; */
 `
 
 export const Btn = styled.a`
@@ -39,18 +38,18 @@ export const Btn = styled.a`
     font-size: 1em;
     
     font-weight: 500;
-    color: ${theme.palette.common.black};
+    color: ${palette.palette.common.black};
     position: relative;
     margin: 0 15px;
     cursor: pointer;
 
     &:hover {
-        color: ${theme.palette.primary.main};
+        color: ${palette.palette.primary.main};
         &:hover::after {
             content: '';
             width: 25px;
             height: 2px;
-            background: ${theme.palette.primary.main};
+            background: ${palette.palette.primary.main};
             position: absolute;
             bottom: -5px;
             left: 0;
@@ -67,10 +66,10 @@ export const ContactUsWrap = styled.div`
 export const ContactUs = styled.a`
     text-decoration: none;
     cursor: pointer;
-    color: ${theme.palette.common.white};
+    color: ${palette.palette.common.white};
     width: 207px;
     height: 63px;
-    background-color: ${theme.palette.primary.main};
+    background-color: ${palette.palette.primary.main};
     background-image: url('/chat.png');
     background-repeat: no-repeat;
     background-position-y: center;
