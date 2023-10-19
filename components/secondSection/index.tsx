@@ -28,7 +28,7 @@ export const SecondSection:FC = () => {
         <S.SecondSectionWrap>
             <Typography variant='h2' sx={{marginBottom:'20px'}}>Our projects</Typography>
             <S.Cards>
-                {data && data.map((el: any, i) => {
+                {data && data.map((el: any, i:number) => {
                     if (i % 2 === 0){
                         return <Card
                             justify={false}

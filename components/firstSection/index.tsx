@@ -6,6 +6,7 @@ import axios from "axios";
 
 // Styles
 import * as S from './styles'
+import { Button } from "@mui/material";
 
 
 export const FirstSection:FC = () => {
@@ -34,7 +35,7 @@ export const FirstSection:FC = () => {
                     <S.BannerContent>
                         <S.Tittle>{data.title}</S.Tittle>
                         <S.Content>{data.description}</S.Content>
-                        <S.Help>{data.btnName}</S.Help>
+                        <Button variant="contained" size="large">{data.btnName}</Button>
                     </S.BannerContent>
                 </S.BannerWrap>
             </S.LeftSide>

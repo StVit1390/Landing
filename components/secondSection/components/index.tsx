@@ -5,7 +5,7 @@ import React, { FC } from "react";
 import * as S from './styles'
 
 // MUI
-import { Typography} from "@mui/material";
+import { Button, Typography} from "@mui/material";
 
 // Elements
 import {Btn} from '../../../elements/button'
@@ -28,13 +28,13 @@ export const Card:FC<CardProps> = ({id, quote, description, goal, img, waterMark
                 <S.Img src={`http://localhost:1337${img}`}></S.Img>
                 <Typography>{quote}</Typography>
                 <S.ImgFooter>
-                    <Typography variant="h6">Goal {goal}</Typography>
-                    <Btn>Donate</Btn>
+                    <Typography variant="h5">Goal {goal}</Typography>
+                    <Button variant='contained' color='primary' size="medium">Donate</Button>
                 </S.ImgFooter>
             </S.ImgWrap>
             <S.Content waterMark={waterMark} justify={justify}>
                 <S.TypographyWrap>
-                    <Typography variant="h6" sx={{paddingLeft: '40px'}}>
+                    <Typography variant="h5" sx={{paddingLeft: '40px'}}>
                         {description}
                     </Typography>
                 </S.TypographyWrap>

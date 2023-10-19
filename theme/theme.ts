@@ -10,7 +10,7 @@ export const palette = {
         },
         background: {
             default: "#F6F6F6",
-            paper: "#fff",
+            paper: "#f1f1f1",
             customBackground: '#ebebeb'
         },
 
@@ -37,7 +37,6 @@ const mainTheme = createTheme({
         background: {
             default: palette.palette.background.default,
             paper: palette.palette.background.paper,
-            customBackground: ''
         },
 
         primary: {
@@ -52,10 +51,42 @@ const mainTheme = createTheme({
         
     },
     typography: {
-        fontFamily: 'Gilroy, sans-serif',
-        button: {
-            textTransform: 'none'
-        }
+        h1: {
+            fontSize: '4.5rem',
+            fontWeight: 600, 
+        },
+        h2: {
+            fontSize: '3rem',
+            fontWeight: 500,
+        },
+        h3: {
+            fontSize: '2.25rem',
+            fontWeight: 500,
+        },
+        h4: {
+            fontSize: '1.5rem',
+            fontWeight: 500,
+        },
+        h5: {
+            fontSize: '1.25rem',
+            fontWeight: 500,
+        },
+        h6: {
+            fontSize: '1rem',
+            fontWeight: 500,
+        },
+        body1: {
+            fontSize: '1rem',
+        },
+        body2: {
+            fontSize: '0.875rem',
+        },
+        subtitle1: {
+            fontSize: '1rem',
+        },
+        subtitle2: {
+            fontSize: '0.875rem',
+        },
     },
     components: {
         MuiCssBaseline: {
@@ -67,15 +98,19 @@ const mainTheme = createTheme({
             styleOverrides: {
                 root: {
                     color: palette.palette.common.white,
-                    height: "63px",
-                    width: "162px",
+                    height: '63px',
+                    width: '162px',
                     borderRadius: '7px',
+                    justifyContent: 'space-around',
+                    textTransform: 'none'
                 },
                 sizeLarge: {
-                    width: "207px",
+                    width: '207px',
                 },
                 outlined: {
                     color: palette.palette.primary.main,
+                    background: palette.palette.common.white,
+                    border: 'none',
                 }
             }
         },

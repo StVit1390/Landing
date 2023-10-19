@@ -40,6 +40,9 @@ export const BannerContent = styled.div`
     border: 1px dashed ${palette.palette.primary.main};
     border-radius: 10px;
     padding: 28px;
+    & > *:not(:last-child) {
+    margin-bottom: 20px;
+    }
 `
 
 export const Tittle = styled.h2`

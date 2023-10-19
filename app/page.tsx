@@ -9,6 +9,7 @@ import * as S from './styles'
 import { Header } from '../components/header'
 import { FirstSection } from '../components/firstSection'
 import { SecondSection } from '../components/secondSection'
+import { ThirdSection } from '../components/thirdSection'
 
 // MUI
 import { CssBaseline, ThemeProvider } from '@mui/material'
@@ -27,6 +28,7 @@ export default function Home() {
           <Header />
           <FirstSection />
           <SecondSection />
+          <ThirdSection />
         </S.Wrap>
     </ThemeProvider> 
    
