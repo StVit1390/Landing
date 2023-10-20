@@ -18,9 +18,6 @@ export const FourthSection:FC = () => {
         })
     }, [])
 
-    console.log(data);
-    
-
     return (
         <S.FourthSectionWrap>
             <Typography variant="h2">About us</Typography>

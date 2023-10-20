@@ -1,21 +1,23 @@
 'use client'
 // Core
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 
 // Styles
-import * as S from './styles'
+import * as S from './styles';
 
 // View
-import { Header } from '../components/header'
-import { FirstSection } from '../components/firstSection'
-import { SecondSection } from '../components/secondSection'
-import { ThirdSection } from '../components/thirdSection'
+import { Header } from '../components/header';
+import { FirstSection } from '../components/firstSection';
+import { SecondSection } from '../components/secondSection';
+import { ThirdSection } from '../components/thirdSection';
 import { FourthSection } from '../components/fourthSection';
+import { FifthSection } from '../components/fifthSection/index';
 
 // MUI
-import { CssBaseline, ThemeProvider } from '@mui/material'
+import { CssBaseline, ThemeProvider } from '@mui/material';
 
 import mainTheme from '../theme/theme'
+
 
 
 export default function Home() {
@@ -32,6 +34,7 @@ export default function Home() {
           <SecondSection />
           <ThirdSection />
           <FourthSection />
+          <FifthSection />
         </S.Wrap>
     </ThemeProvider> 
    
