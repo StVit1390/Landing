@@ -29,7 +29,7 @@ export const BannerWrap = styled.div`
     display: flex;
     padding: 20px;
     border-radius: 10px;
-    background: ${palette.palette.common.white};
+    background: ${palette.common.white};
     align-items: center;
     justify-content: center;
 `
@@ -37,7 +37,7 @@ export const BannerWrap = styled.div`
 export const BannerContent = styled.div`
     display: flex;
     flex-direction: column;
-    border: 1px dashed ${palette.palette.primary.main};
+    border: 1px dashed ${palette.primary.main};
     border-radius: 10px;
     padding: 28px;
     & > *:not(:last-child) {
@@ -62,10 +62,10 @@ export const Content = styled.p`
 export const Help = styled.a`
     cursor: pointer;
     text-decoration: none;
-    background-color: ${palette.palette.primary.main};
+    background-color: ${palette.primary.main};
     padding: 22px 50px;
     width: fit-content;
-    color: ${palette.palette.common.white};
+    color: ${palette.common.white};
     border-radius: 10px;
     margin-top: 30px;
 `

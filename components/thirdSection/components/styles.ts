@@ -21,7 +21,6 @@ export const Copy = styled('div')`
     position: absolute;
     width: 26px;
     height: 26px;
-    background-image: url('/copy.png');
     right: 5%;
     top: 33%;
     cursor: pointer;

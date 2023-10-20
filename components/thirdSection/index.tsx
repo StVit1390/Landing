@@ -21,9 +21,6 @@ export const ThirdSection:FC = () => {
         })
     }, [])
 
-    console.log(data);
-    
-
     return (
         <S.SectionWrap bgImg={data && data.attributes.coverImage.data.attributes.url}>
             <S.BannerInfo>

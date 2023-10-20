@@ -23,7 +23,7 @@ export const BannerInfoWrap = styled('div')`
     display: flex;
     flex-direction: column;
     align-self: center;
-     & > *:not(:last-child) {
+    & > *:not(:last-child) {
     margin-bottom: 20px;
     }
 `

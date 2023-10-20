@@ -10,11 +10,13 @@ import { Header } from '../components/header'
 import { FirstSection } from '../components/firstSection'
 import { SecondSection } from '../components/secondSection'
 import { ThirdSection } from '../components/thirdSection'
+import { FourthSection } from '../components/fourthSection';
 
 // MUI
 import { CssBaseline, ThemeProvider } from '@mui/material'
 
 import mainTheme from '../theme/theme'
+
 
 export default function Home() {
     const [mounted, setMounted] = useState(false)
@@ -29,6 +31,7 @@ export default function Home() {
           <FirstSection />
           <SecondSection />
           <ThirdSection />
+          <FourthSection />
         </S.Wrap>
     </ThemeProvider> 
    

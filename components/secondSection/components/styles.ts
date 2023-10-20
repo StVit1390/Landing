@@ -16,13 +16,13 @@ export const Card = styled('div') <CardProps>`
     width: 100%;
     border-radius: 10px;
     padding: 20px;
-    background-color: ${palette.palette.background.default};
+    background-color: ${(props)=> props.theme.palette.background.default};
     flex-direction: ${({ justify }) =>  justify ? 'row-reverse' : 'row' };
 `
 
 export const ImgWrap = styled('div')`
     width: 35%;
-    background-color: ${palette.palette.common.white};
+    background-color: ${(props)=> props.theme.palette.common.white};
     padding: 20px;
     border-radius: 10px;
 `

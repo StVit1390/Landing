@@ -2,7 +2,6 @@
 import { createTheme } from "@mui/material";
 
 export const palette = {
-    palette: {
         common: {
             black: '#000',
             white: '#fff',
@@ -23,30 +22,28 @@ export const palette = {
         text: {
             primary: '#000',
         },
-
-    },
 }
 
 const mainTheme = createTheme({
     palette: {
         common: {
-            black: palette.palette.common.black,
-            white: palette.palette.common.white,
+            black: palette.common.black,
+            white: palette.common.white,
             
         },
         background: {
-            default: palette.palette.background.default,
-            paper: palette.palette.background.paper,
+            default: palette.background.default,
+            paper: palette.background.paper,
         },
 
         primary: {
-            main: palette.palette.primary.main,
+            main: palette.primary.main,
         },
         secondary:{
-            main: palette.palette.secondary.main
+            main: palette.secondary.main
         },
         text: {
-            primary: palette.palette.text.primary,
+            primary: palette.text.primary,
         },
         
     },
@@ -57,15 +54,15 @@ const mainTheme = createTheme({
         },
         h2: {
             fontSize: '3rem',
-            fontWeight: 500,
+            fontWeight: 600,
         },
         h3: {
             fontSize: '2.25rem',
-            fontWeight: 500,
+            fontWeight: 600,
         },
         h4: {
             fontSize: '1.5rem',
-            fontWeight: 500,
+            fontWeight: 600,
         },
         h5: {
             fontSize: '1.25rem',
@@ -97,7 +94,7 @@ const mainTheme = createTheme({
         MuiButton: {
             styleOverrides: {
                 root: {
-                    color: palette.palette.common.white,
+                    color: palette.common.white,
                     height: '63px',
                     width: '162px',
                     borderRadius: '7px',
@@ -108,9 +105,12 @@ const mainTheme = createTheme({
                     width: '207px',
                 },
                 outlined: {
-                    color: palette.palette.primary.main,
-                    background: palette.palette.common.white,
-                    border: 'none',
+                    color: palette.primary.main,
+                    background: palette.common.white,
+                    '&:hover': {
+                        background: palette.common.white
+                    }
+                    // border: 'none',
                 }
             }
         },
