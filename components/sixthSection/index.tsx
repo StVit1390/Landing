@@ -5,7 +5,7 @@ import React, { FC, useState, useEffect } from "react";
 import axios from "axios";
 
 // Styles
-import * as S from './style'
+import * as S from './styles'
 
 // MUI
 import { Typography } from "@mui/material";

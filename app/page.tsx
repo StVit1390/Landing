@@ -13,6 +13,7 @@ import { ThirdSection } from '../components/thirdSection';
 import { FourthSection } from '../components/fourthSection';
 import { FifthSection } from '../components/fifthSection/index';
 import { SixthSection } from '../components/sixthSection/index';
+import { SeventhSection } from '../components/seventhSection/index';
 
 // MUI
 import { CssBaseline, ThemeProvider } from '@mui/material';
@@ -38,6 +39,7 @@ export default function Home() {
           <FourthSection />
           <FifthSection />
           <SixthSection />
+          <SeventhSection />
         </S.Wrap>
     </ThemeProvider> 
    
