@@ -23,9 +23,6 @@ export const FifthSection:FC = () => {
         })
     }, [])
 
-    console.log(data && data.attributes.cards.data);
-    
-
     return (
         <S.SectionWrap>
             <Typography variant="h2">Work in company name means</Typography>

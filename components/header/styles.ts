@@ -22,7 +22,8 @@ export const LogoWrap = styled.div`
 
 export const Logo  = styled.img`
     position: absolute;
-    top: 15px;
+    top: 5px;
+    background-color: ${palette.common.white};
     border: 10px solid ${palette.common.white};
     border-radius: 10px;
 `
