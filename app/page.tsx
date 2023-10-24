@@ -11,9 +11,10 @@ import { FirstSection } from '../components/firstSection';
 import { SecondSection } from '../components/secondSection';
 import { ThirdSection } from '../components/thirdSection';
 import { FourthSection } from '../components/fourthSection';
-import { FifthSection } from '../components/fifthSection/index';
-import { SixthSection } from '../components/sixthSection/index';
-import { SeventhSection } from '../components/seventhSection/index';
+import { FifthSection } from '../components/fifthSection';
+import { SixthSection } from '../components/sixthSection';
+import { SeventhSection } from '../components/seventhSection';
+import { EighthSection } from '../components/eighthSection'
 
 // MUI
 import { CssBaseline, ThemeProvider } from '@mui/material';
@@ -40,6 +41,7 @@ export default function Home() {
           <FifthSection />
           <SixthSection />
           <SeventhSection />
+          <EighthSection />
         </S.Wrap>
     </ThemeProvider> 
    

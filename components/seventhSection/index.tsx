@@ -22,8 +22,6 @@ export const SeventhSection:FC = () => {
             setData(res.data.data[0].attributes);
         })
     }, [])
-
-    console.log(data);
     
     return (
         <S.SectionWrap bg={data && data.background.data.attributes.url} icon={data && data.logo.data.attributes.url}>

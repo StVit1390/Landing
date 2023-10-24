@@ -8,9 +8,10 @@ export const palette = {
 
         },
         background: {
-            default: "#F6F6F6",
-            paper: "#f1f1f1",
-            customBackground: '#ebebeb'
+            default: '#F6F6F6',
+            paper: '#F1F1F1',
+            main: '#EBEBEB',
+            alternate: '#E2E2E2',
         },
 
         primary: {
@@ -34,6 +35,8 @@ const mainTheme = createTheme({
         background: {
             default: palette.background.default,
             paper: palette.background.paper,
+            main: palette.background.main,
+            alternate: palette.background.alternate,
         },
 
         primary: {
@@ -82,7 +85,7 @@ const mainTheme = createTheme({
             fontSize: '1rem',
         },
         subtitle2: {
-            fontSize: '0.875rem',
+            fontSize: '0.75rem',
         },
     },
     components: {
