@@ -1,8 +1,29 @@
 // Core
 import styled from 'styled-components'
 
+// MUI
+import { FormControl, MenuItem } from "@mui/material";
+import Select from '@mui/material/Select';
+
 // Colors
 import {palette} from '../../../../theme/theme'
+
+export const CustomFormControl = styled(FormControl)`
+    
+`
+
+export const CustomSelect = styled(Select)`
+    min-height: 63px;
+    min-width: 80px;
+    margin-right: 20px;
+    background: ${palette.background.alternate};
+    outline: ${palette.background.alternate};
+    & fieldset {
+        border-color: transparent;
+    }
+    
+`
+
 
 export const Lang = styled.div`
     display: flex;

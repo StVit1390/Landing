@@ -25,7 +25,7 @@ export const SecondSection:FC = () => {
 
 
     return (
-        <S.SecondSectionWrap>
+        <S.SecondSectionWrap id="secondSection">
             <Typography variant='h2' sx={{marginBottom:'20px'}}>Our projects</Typography>
             <S.Cards>
                 {data && data.map((el: any, i:number) => {

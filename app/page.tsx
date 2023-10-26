@@ -15,6 +15,7 @@ import { FifthSection } from '../components/fifthSection';
 import { SixthSection } from '../components/sixthSection';
 import { SeventhSection } from '../components/seventhSection';
 import { EighthSection } from '../components/eighthSection'
+import { Footer } from '../components/footer'
 
 // MUI
 import { CssBaseline, ThemeProvider } from '@mui/material';
@@ -42,6 +43,7 @@ export default function Home() {
           <SixthSection />
           <SeventhSection />
           <EighthSection />
+          <Footer />
         </S.Wrap>
     </ThemeProvider> 
    

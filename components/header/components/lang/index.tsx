@@ -4,24 +4,33 @@ import React, {FC, useState} from "react";
 // Style
 import * as S from './style'
 
+// MUI
+import { FormControl, MenuItem } from "@mui/material";
+import Select, { SelectChangeEvent } from '@mui/material/Select';
+
 export const Lang:FC = () => {
 
     const [lang, setLang] = useState('EN')
-    const [isOpen, setIsOpen] = useState(false)
-    const langArr = ['EN','PL','UA']
+   
+    const handleChange = (event: SelectChangeEvent) => {
+        setLang(event.target.value);
+    };
 
     return(
-        <S.Lang onClick={()=> setIsOpen(true)}>
-            {lang}
-            {isOpen && <S.LangFoldWrap>
-                {
-                    langArr.map((el: string) => {
-                        return (
-                            <S.LangFold key={el}onMouseDown={() => {setIsOpen(!isOpen); setLang(el) }}>{el}</S.LangFold>
-                        )
-                    })
-                }
-            </S.LangFoldWrap>}
-        </S.Lang>
+    
+        <S.CustomFormControl >
+            <S.CustomSelect
+            sx={{borderRadius: '7px', outline: 'none'}}
+            value={lang}
+            onChange={handleChange}
+            displayEmpty
+            inputProps={{ 'aria-label': 'Without label' }}
+            >
+                <MenuItem value="EN">EN</MenuItem>
+                <MenuItem value="PL">PL</MenuItem>
+                <MenuItem value="UA">UA</MenuItem>
+            </S.CustomSelect>
+        </S.CustomFormControl>
+        
     )
 }

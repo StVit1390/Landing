@@ -19,7 +19,7 @@ export const FourthSection:FC = () => {
     }, [])
 
     return (
-        <S.FourthSectionWrap>
+        <S.FourthSectionWrap id="fourthSection">
             <Typography variant="h2">About us</Typography>
             <S.FourthSectionContent>
                 <S.FirstFloor>

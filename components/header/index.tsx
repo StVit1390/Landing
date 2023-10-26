@@ -37,7 +37,7 @@ export const Header:FC = () => {
     
     
     return (
-        <S.Header>
+        <S.Header id='header'>
             <S.LogoWrap>
                 <S.Logo src={`http://localhost:1337${data && data.logo && data.logo}`}></S.Logo>
             </S.LogoWrap>
@@ -48,7 +48,7 @@ export const Header:FC = () => {
             </S.NavMenu>
             <S.ContactUsWrap>
                 <Lang />
-                <Button variant='contained' color='primary' size="large" endIcon={<ChatOutlinedIcon />}> Support us</Button>
+                <Button href='#eighthSection' variant='contained' color='primary' size="large" endIcon={<ChatOutlinedIcon />}> Support us</Button>
             </S.ContactUsWrap>
         </S.Header>
     )

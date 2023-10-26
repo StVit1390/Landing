@@ -1,0 +1,143 @@
+// MUI
+import { Button } from '@mui/material'
+import { styled } from '@mui/system'
+
+interface SectionWrapProps {
+    bgImg:string,
+}
+
+export const SectionWrap = styled('section') <SectionWrapProps>`
+    padding: 80px 15%;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    background-image: url(http://localhost:1337${({ bgImg }) => bgImg});
+    background-repeat: no-repeat;
+    background-size: cover;
+`
+
+export const Logo = styled('img')`
+    padding: 8px 38px;
+    border-radius: 12px;
+    background-color: ${({theme})=> theme.palette.common.white};
+    height: fit-content;
+`
+
+export const Nav = styled('div')`
+    display: flex;
+    flex-direction: column;
+    & a {
+        margin-bottom: 20px;
+        color: ${({theme})=>theme.palette.common.white};
+    }
+`
+export const Btn = styled('a')`
+
+`
+
+export const Contacts = styled('div')`
+    display: flex;
+    flex-direction: column;
+    & h5 {
+        color: ${({ theme }) => theme.palette.common.white};
+        font-weight: 600;
+    }
+`
+
+export const Contact = styled('div')`
+    display: flex;
+    position: relative;
+    align-items: center;
+    margin-top: 20px;
+    &::before {
+        content: '';
+        background: url('/call.svg');
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        background-size: cover;
+        background-repeat: no-repeat
+    }
+
+    & h5 {
+        color: ${({ theme }) => theme.palette.common.white};
+        margin-left: 50px;
+        font-weight: 400;
+    }
+`
+
+export const Email = styled('div')`
+    display: flex;
+    position: relative;
+    align-items: center;
+    margin-top: 20px;
+    &:before {
+        content: '';
+        background: url('/mail.svg');
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+    }
+
+    & h5 {
+        color: ${({ theme }) => theme.palette.common.white};
+        margin-left: 50px;
+        font-weight: 400;
+    }
+`
+
+export const SocialMedia = styled('div')`
+    display: flex;
+    flex-direction: column;
+    & h5 {
+        color: ${({ theme }) => theme.palette.common.white};
+        font-weight: 600;
+    }
+`
+
+export const Links = styled('div')`
+    display: flex;
+    flex-direction: column;
+`
+
+export const Link = styled('a')`
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    & h5 {
+        margin-left: 20px;
+        color: ${({ theme }) => theme.palette.common.white};
+        font-weight: 400;
+    }
+    &:hover {
+        & img {
+          filter: invert(0.1)
+        }
+
+        & h5 {
+            color: ${({theme})=>theme.palette.background.alternate};
+        }
+    }
+   
+`
+
+export const SocialIcon = styled('img')`
+    fill: white;
+`
+
+export const UpBtn = styled(Button)`
+    width: fit-content;
+    border-radius: 50%;
+    position: absolute;
+    right: 3%;
+    bottom: 25%;
+    & span {
+        margin: 0;
+    };
+   
+`
+
+

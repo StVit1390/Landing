@@ -22,7 +22,7 @@ export const ThirdSection:FC = () => {
     }, [])
 
     return (
-        <S.SectionWrap bgImg={data && data.attributes.coverImage.data.attributes.url}>
+        <S.SectionWrap  bgImg={data && data.attributes.coverImage.data.attributes.url}>
             <S.BannerInfo>
                 <S.BannerInfoWrap>
                     <Typography variant="h1" color={'white'}>{data && data.attributes.tittle}</Typography>

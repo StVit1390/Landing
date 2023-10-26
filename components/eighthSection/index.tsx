@@ -14,26 +14,26 @@ import { TextField, Typography, Button } from "@mui/material";
 export const EighthSection:FC = () => {
     const [formValues, setFormValues] = useState({name: '', phone: '', email: '', message: ''})
 
-    const postData = {
-        name: 'John Doe',
-        email: 'johndoe@example.com',
-        phone: '123-456-7890',
-        message: 'This is a test message.',
-    };
+    // const postData = {
+    //     name: 'John Doe',
+    //     email: 'johndoe@example.com',
+    //     phone: '123-456-7890',
+    //     message: 'This is a test message.',
+    // };
 
-    // Make the POST request
-    axios
-        .post('http://localhost:1337/api/suports', postData)
-        .then(response => {
-            console.log('Support request created:', response.data);
-        })
-        .catch(error => {
-            console.error('Error creating support request:', error);
-        });
+    // // Make the POST request
+    // axios
+    //     .post('http://localhost:1337/api/suports', postData)
+    //     .then(response => {
+    //         console.log('Support request created:', response.data);
+    //     })
+    //     .catch(error => {
+    //         console.error('Error creating support request:', error);
+    //     });
  
     
     return (
-        <S.SectionWrap>
+        <S.SectionWrap id="eighthSection">
             <Typography variant="h2">Support</Typography>
             <S.FormWrap>
                 <Typography variant="h3">Do you have any question?</Typography>

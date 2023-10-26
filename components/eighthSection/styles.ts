@@ -45,8 +45,8 @@ export const Label = styled('label')`
 `
 
 export const Shadow = styled('div')`
-    -webkit-box-shadow: 0px 10px 15px -4px rgba(0,0,0,0.42);
-    -moz-box-shadow: 0px 10px 15px -4px rgba(0,0,0,0.42);
-    box-shadow: 0px 10px 15px -4px rgba(0,0,0,0.42);
+    -webkit-box-shadow: 0px 10px 15px -4px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0px 10px 15px -4px rgba(0,0,0,0.1);
+    box-shadow: 0px 10px 15px -4px rgba(0,0,0,0.1);
     border-radius: 7px;
 `

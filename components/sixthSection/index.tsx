@@ -22,7 +22,7 @@ export const SixthSection:FC = () => {
 
 
     return (
-        <S.SectionWrap>
+        <S.SectionWrap id="sixthSection">
             <Typography variant="h2">Our partners</Typography>
             <S.PartnersWrap>
                 {
