@@ -27,10 +27,27 @@ export const SectionWrap = styled('section')<SectionWrapProps>`
             bottom: -208px;
             left: 60px;
         }
+
+    @media screen and (max-width: 1500px) {
+        padding: 50px 5%;
+    }
+
+    @media screen and (max-width: 1200px) {
+        padding: 50px 2%;
+    }
+
+    @media screen and (max-width: 1100px) {
+        justify-content: space-around;
+    }
+
+    @media screen and (max-width: 750px) {
+        flex-direction: column;
+    }
 `
 
 export const Contacts = styled('div')`  
-    width: calc(33% - 20px);
+    width: calc(33% - 10px);
+    z-index: 1;
      & h2{
         color: ${({ theme }) => theme.palette.common.white};
     }
@@ -39,9 +56,15 @@ export const Contacts = styled('div')`
         margin-left: 50px;
         font-weight: 600;
     }
-     & > *:not(:last-child) {
-    margin-bottom: 20px ;
+    & > *:not(:last-child) {
+        margin-bottom: 20px ;
     } 
+    @media screen and (max-width: 1100px) {
+        width: calc(50% - 10px);
+    }
+     @media screen and (max-width: 750px) {
+        width: 100%;
+    }
 `
 
 export const PhoneWrap = styled('div')`
@@ -78,14 +101,46 @@ export const EmailWrap = styled('div')`
 
 export const Map = styled('div')`  
     width: calc(33% - 20px);
+   
+    @media screen and (max-width: 1100px) {
+        display: none;
+    }
+
+     @media screen and (max-width: 750px) {
+        display: flex;
+        width: 100%;
+        margin: 25px 0;
+    }
 `
 
 export const MapDummy = styled('img')`
 
 `
 
+export const MapHiden = styled('div')`  
+    display: none;
+   
+    @media screen and (max-width: 1100px) {
+        display: flex;
+    }
+
+     @media screen and (max-width: 750px) {
+        display: none;
+    }
+`
+
+export const MapDummyHiden = styled('img')`
+
+`
+
 export const Accounts = styled('div')`  
     width: calc(33% - 20px);
+    @media screen and (max-width: 1100px) {
+        width: calc(50% - 20px);
+    }
+    @media screen and (max-width: 750px) {
+        width: 100%;
+    }
 `
 
 export const BannerBanksWrap = styled('div')`

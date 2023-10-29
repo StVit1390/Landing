@@ -7,8 +7,13 @@ export const FourthSectionWrap = styled('section')`
     flex-direction: column;
     align-items: center;
     & > *:not(:last-child) {
-    margin: 100px 0 40px 0 ;
+    margin: 40px 0 40px 0 ;
     }
+
+    @media screen and (max-width: 1400px) {
+        padding: 50px 5%;
+    }
+    v
 `
 
 export const FourthSectionContent = styled('div')`
@@ -19,10 +24,16 @@ export const FourthSectionContent = styled('div')`
     & > *:not(:last-child) {
     margin-bottom: 100px ;
     }
+    @media screen and (max-width: 900px) {
+        padding: 0;
+    }
 `
 
 export const FirstFloor = styled('div')`
     display: flex;
+    @media screen and (max-width: 500px) {
+        flex-direction: column;
+    }
 `
 
 export const FirstFloorLeft = styled('div')`
@@ -32,6 +43,14 @@ export const FirstFloorLeft = styled('div')`
     justify-content: center;
     & > *:not(:last-child) {
     margin-bottom: 30px;
+    }
+@media screen and (max-width: 900px) {
+        width: 55%;;
+        margin-right: 2%;
+    }
+    @media screen and (max-width: 500px) {
+        width: 100%;;
+        margin-right: 0;
     }
 `
 
@@ -43,6 +62,17 @@ export const FirstFloorRight = styled('div')`
     & > *:not(:last-child) {
     margin-top: 15px ;
     }
+    @media screen and (max-width: 900px) {
+        width: 45%;;
+    }
+    @media screen and (max-width: 500px) {
+        width: 100%;
+        & > *:not(:last-child) {
+        margin-top: 25px ;
+        }
+    }
+
+    
     
 `
 interface ImgProps {
@@ -67,6 +97,9 @@ export const ImgBottom = styled('img')`
 export const SecondFloor = styled('div')`
     display: flex;
     justify-content: space-between;
+     @media screen and (max-width: 500px) {
+        flex-direction: column;
+    }
 `
 
 export const SecondFloorLeft = styled('div')`
@@ -74,8 +107,15 @@ export const SecondFloorLeft = styled('div')`
      & > *:not(:last-child) {
     margin-bottom: 20px ;
     }
+     @media screen and (max-width: 500px) {
+        width: 100%;
+    }
 `
 
 export const oSecondFloorRight = styled('div')`
     width: calc(50% - 10px);
+     @media screen and (max-width: 500px) {
+        width: 100%;
+        margin-top: 25px;
+    }
 `

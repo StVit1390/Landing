@@ -22,6 +22,7 @@ export const palette = {
         },
         text: {
             primary: '#000',
+            alternate: '#2e2e2e',
         },
 }
 
@@ -47,6 +48,7 @@ const mainTheme = createTheme({
         },
         text: {
             primary: palette.text.primary,
+            alternate: palette.text.alternate,
         },
         
     },

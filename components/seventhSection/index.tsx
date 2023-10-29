@@ -37,6 +37,9 @@ export const SeventhSection:FC = () => {
                 <S.EmailWrap>
                     <Typography variant="h5">{data && data.email.data.attributes.email}</Typography>
                 </S.EmailWrap>
+                <S.MapHiden>
+                    <S.MapDummyHiden src="./map.svg" />
+                </S.MapHiden>
             </S.Contacts>
             <S.Map>
                 <S.MapDummy src="./map.svg" />

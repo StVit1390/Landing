@@ -18,17 +18,16 @@ export const SecondSection:FC = () => {
     const [data, setData] = useState()
 
     useEffect(() => {
-        axios.get(`${process.env.NEXT_PUBLIC_STRAPI_URL}/projects/?populate=*`).then((res: any) => {
-            setData(res.data.data);
+        axios.get(`${process.env.NEXT_PUBLIC_STRAPI_URL}/our-projects/?populate=projects&populate=projects.img&populate=projects.waterMark`).then((res: any) => {
+            setData(res.data.data[0].attributes);
         })
     }, [])
-
-
+    
     return (
         <S.SecondSectionWrap id="secondSection">
-            <Typography variant='h2' sx={{marginBottom:'20px'}}>Our projects</Typography>
+            <S.Tittle variant='h2'>{data && data.tittle}</S.Tittle>
             <S.Cards>
-                {data && data.map((el: any, i:number) => {
+                {data && data.projects.data.map((el: any, i:number) => {
                     if (i % 2 === 0){
                         return <Card
                             justify={false}

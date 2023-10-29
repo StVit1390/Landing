@@ -12,7 +12,19 @@ export const Card = styled('div')`
     text-align: center;
     & > *:not(:last-child) {
     margin-bottom: 20px ;
-    } 
+    }
+    @media screen and (max-width: 1050px) {
+        padding: 0;
+    }
+    @media screen and (max-width: 700px) {
+        width: calc(25% - 20px);
+    }
+    @media screen and (max-width: 550px) {
+        width: calc(33% - 20px);
+    }
+    @media screen and (max-width: 450px) {
+        width: calc(50% - 20px);
+    }
 `
 
 export const Icon = styled('img')`

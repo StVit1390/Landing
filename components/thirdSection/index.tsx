@@ -10,6 +10,7 @@ import { Button, Typography } from "@mui/material";
 
 // View
 import { AccountField } from './components/index';
+import { DonateBtn } from './styles';
 
 export const ThirdSection:FC = () => {
 
@@ -25,9 +26,9 @@ export const ThirdSection:FC = () => {
         <S.SectionWrap  bgImg={data && data.attributes.coverImage.data.attributes.url}>
             <S.BannerInfo>
                 <S.BannerInfoWrap>
-                    <Typography variant="h1" color={'white'}>{data && data.attributes.tittle}</Typography>
-                    <Typography variant="h5" color={'white'}>{data && data.attributes.description}</Typography>
-                    <Button variant="outlined">Donate</Button>
+                    <S.Tittle variant="h1">{data && data.attributes.tittle}</S.Tittle>
+                    <S.Description variant="h5">{data && data.attributes.description}</S.Description>
+                    <S.DonateBtn variant="outlined">Donate</S.DonateBtn>
                 </S.BannerInfoWrap>
             </S.BannerInfo>
             <S.BannerBanks>

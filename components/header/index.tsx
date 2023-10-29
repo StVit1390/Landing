@@ -1,5 +1,5 @@
 // Core
-import React, {FC, useEffect,useState} from 'react';
+import React, {FC, useContext, useEffect,useState} from 'react';
 
 // Styles 
 import * as S from './styles'
@@ -12,9 +12,10 @@ import axios from 'axios';
 
 // MUI
 import { Button } from '@mui/material';
-
 import ChatOutlinedIcon from '@mui/icons-material/ChatOutlined';
 
+// Context
+import { LocalContext } from '../../app/page';
 
 export const Header:FC = () => {
 
@@ -23,14 +24,15 @@ export const Header:FC = () => {
         items: [{id: null, attributes:{link:'', item:'sample'}}]
     })
 
+    const {local} = useContext(LocalContext)
     useEffect(()=>{
-        axios.get(`${process.env.NEXT_PUBLIC_STRAPI_URL}/headers/?populate=*`).then((res:any) => {
+        axios.get(`${process.env.NEXT_PUBLIC_STRAPI_URL}/headers/?populate=*&locale=${local}`).then((res:any) => {
             setData({
                 logo: res.data.data[0].attributes.logo.data.attributes.url,
                 items: res.data.data[0].attributes.menu_items.data,
             })
         })
-    },[]) // Header reqest
+    },[local]) // Header reqest
 
 
 
@@ -46,10 +48,10 @@ export const Header:FC = () => {
                     return <S.Btn key={item.id} href={`#${item.attributes.link}`}>{item.attributes.item}</S.Btn>
                 })}
             </S.NavMenu>
-            <S.ContactUsWrap>
+            <S.SupportUsWrap>
                 <Lang />
-                <Button href='#eighthSection' variant='contained' color='primary' size="large" endIcon={<ChatOutlinedIcon />}> Support us</Button>
-            </S.ContactUsWrap>
+                <S.SupportUs href='#eighthSection' variant='contained' color='primary' size="large" endIcon={<ChatOutlinedIcon />}> Support us</S.SupportUs>
+            </S.SupportUsWrap>
         </S.Header>
     )
 }

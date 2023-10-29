@@ -25,9 +25,9 @@ export const FifthSection:FC = () => {
 
     return (
         <S.SectionWrap>
-            <Typography variant="h2">Work in company name means</Typography>
-            <Typography variant="h5">{data && data.attributes.quote}</Typography>
-            <Typography variant="h5">{data && data.attributes.quote2}</Typography>
+            <S.Tittle variant="h2">{data && data.attributes.name}</S.Tittle>
+            <S.Quote variant="h5">{data && data.attributes.quote}</S.Quote>
+            <S.Quote variant="h5">{data && data.attributes.quote2}</S.Quote>
             <S.Cards>
                 {
                     data && data.attributes.cards.data.map((el:any)=>{

@@ -28,15 +28,15 @@ export const Card:FC<CardProps> = ({id, quote, description, goal, img, waterMark
                 <S.Img src={`http://localhost:1337${img}`}></S.Img>
                 <Typography>{quote}</Typography>
                 <S.ImgFooter>
-                    <Typography variant="h5">Goal {goal}</Typography>
-                    <Button variant='contained' color='primary' size="medium">Donate</Button>
+                    <S.Goal variant="h5">Goal 000{goal}</S.Goal>
+                    <S.DonateBtn variant='contained' color='primary' size="medium">Donate</S.DonateBtn>
                 </S.ImgFooter>
             </S.ImgWrap>
             <S.Content waterMark={waterMark} justify={justify}>
                 <S.TypographyWrap>
-                    <Typography variant="h5" sx={{paddingLeft: '40px'}}>
+                    <S.TypographyContent variant="h5">
                         {description}
-                    </Typography>
+                    </S.TypographyContent>
                 </S.TypographyWrap>
             </S.Content>
         </S.Card>

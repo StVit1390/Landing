@@ -1,23 +1,35 @@
-// Core
-import styled from 'styled-components'
+// MUI
+import { styled } from '@mui/system'
+import { Typography } from '@mui/material'
 
+// Color
 import {palette} from '../../theme/theme'
+;
 
 interface SectionWrapProps {
     img: string; // Определите тип img, например, string
 }
 
-export const SectionWrap = styled.section<SectionWrapProps>`
+export const SectionWrap = styled('section')<SectionWrapProps>`
     display: flex;
     background: rgb(231,231,231);
-    background: linear-gradient(45deg, rgba(231,231,231,0.9051995798319328) 50%, rgba(246,246,246,1) 100%);
     height: 673px;
     background-image: url(${({img})=>img});
     background-repeat: no-repeat;
+    background-position: center;
     padding: 0 15%;
+    @media screen and (max-width: 1400px) {
+        padding: 0 5%;
+    }
+
+    @media screen and (max-width: 1100px) {
+        padding: 0 1%;
+        display: flex;
+        justify-content: center;
+    }
 `
 
-export const LeftSide = styled.div`
+export const LeftSide = styled('div')`
     display: flex;
     position: relative;
     align-items: center;
@@ -25,7 +37,7 @@ export const LeftSide = styled.div`
     
 `
 
-export const BannerWrap = styled.div`
+export const BannerWrap = styled('div')`
     display: flex;
     padding: 20px;
     border-radius: 10px;
@@ -34,7 +46,7 @@ export const BannerWrap = styled.div`
     justify-content: center;
 `
 
-export const BannerContent = styled.div`
+export const BannerContent = styled('div')`
     display: flex;
     flex-direction: column;
     border: 1px dashed ${palette.primary.main};
@@ -45,21 +57,25 @@ export const BannerContent = styled.div`
     }
 `
 
-export const Tittle = styled.h2`
-    font-size: 64px;
-    color: #2E2E2E;
+export const Tittle = styled(Typography)`
+    color: ${({theme})=> theme.palette.text.alternate};
     line-height: 110%;
     font-weight: 700;
+    @media screen and (max-width: 700px) {
+        font-size: 50px;
+    }
 `
-export const Content = styled.p`
-    font-size: 24px;
-    color: #2E2E2E;
+export const Content = styled(Typography)`
+    color: ${({ theme }) => theme.palette.text.alternate};
     line-height: 140%;
     font-weight: 500;
     margin-top: 20px;
+     @media screen and (max-width: 700px) {
+        font-size: 1.2rem;
+    }
 `
 
-export const Help = styled.a`
+export const Help = styled('a')`
     cursor: pointer;
     text-decoration: none;
     background-color: ${palette.primary.main};
@@ -71,7 +87,7 @@ export const Help = styled.a`
 `
 
 
-export const RightSide = styled.div`
+export const RightSide = styled('div')`
     display: flex;
     position: relative;
 `
@@ -83,7 +99,7 @@ interface coordinates {
 
 
 
-export const IconWrap = styled.div<coordinates>`
+export const IconWrap = styled('div')<coordinates>`
     width: 79px;
     height: 79px;
     display: flex;
@@ -97,7 +113,7 @@ export const IconWrap = styled.div<coordinates>`
     background: rgba(255, 255, 255, 0.2);
 `
 
-export const Icon = styled.img`
+export const Icon = styled('img')`
     width: 32px;
     height: 32px;
 `

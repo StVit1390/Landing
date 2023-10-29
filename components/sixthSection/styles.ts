@@ -9,7 +9,14 @@ export const SectionWrap = styled('section')`
     flex-direction: column;
     align-items: center;
     & h2{
-        margin: 100px 0 30px 0;
+        margin: 40px 0 30px 0;
+    }
+
+    @media screen and (max-width: 1400px) {
+        padding: 50px 5%;
+    }
+    @media screen and (max-width: 1100px) {
+        padding: 50px 2%;
     }
 `
 
@@ -17,6 +24,15 @@ export const PartnerIcon = styled('img')`
     width: calc(20% - 10px);
     padding: 50px;
     margin: 5px;
+    @media screen and (max-width: 900px) {
+        padding: 10px;
+    }
+    @media screen and (max-width: 800px) {
+        width: calc(25% - 10px);
+    }
+    @media screen and (max-width: 450px) {
+        width: calc(33% - 10px);
+    }
 `
 
 export const PartnersWrap = styled('div')`

@@ -3,9 +3,11 @@ import React from "react";
 
 // MUI
 import { styled } from '@mui/system'
+import { Button, Typography } from "@mui/material";
 
 // Theme
 import { palette } from '../../../theme/theme'
+
 
 interface CardProps {
     justify: boolean
@@ -18,6 +20,10 @@ export const Card = styled('div') <CardProps>`
     padding: 20px;
     background-color: ${(props)=> props.theme.palette.background.default};
     flex-direction: ${({ justify }) =>  justify ? 'row-reverse' : 'row' };
+    overflow: hidden;
+    @media screen and (max-width: 600px){
+        flex-direction: column-reverse;
+    }
 `
 
 export const ImgWrap = styled('div')`
@@ -25,6 +31,13 @@ export const ImgWrap = styled('div')`
     background-color: ${(props)=> props.theme.palette.common.white};
     padding: 20px;
     border-radius: 10px;
+     @media screen and (max-width: 1100px){
+        width: 40%;
+        padding: 20px 10px;
+    }
+    @media screen and (max-width: 600px){
+       width: 100%;
+    }
 `
 
 export const Img = styled('img')`
@@ -55,7 +68,14 @@ export const Content = styled('div') <ContentProps>`
         content: url(http://localhost:1337${props => props.waterMark});
         position: absolute;
         bottom: 5%;
-        right: ${({ justify }) => justify ? '70%' : '5%' };
+        right: ${({ justify }) => justify ? '65%' : '5%' };
+    }
+     @media screen and (max-width: 1100px){
+        width: 60%;
+        padding: 20px 30px;
+    }
+     @media screen and (max-width: 600px){
+       width: 100%;
     }
 
 `
@@ -74,5 +94,18 @@ export const TypographyWrap = styled('div')`
         background: ${({theme})=>theme.palette.primary.main};
         position: absolute;
         left: 0;
+    }
+`
+export const TypographyContent = styled(Typography)`
+    padding-left: 10%;
+`
+
+export const Goal = styled(Typography)`
+
+`
+
+export const DonateBtn = styled(Button)`
+    @media screen and (max-width: 1300px){
+        width: 100px;
     }
 `

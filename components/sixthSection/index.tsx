@@ -15,18 +15,17 @@ export const SixthSection:FC = () => {
     const [data, setData] = useState<any>()
 
     useEffect(() => {
-        axios.get(`${process.env.NEXT_PUBLIC_STRAPI_URL}/partners?populate=*`).then((res: any) => {
-            setData(res.data.data);
+        axios.get(`${process.env.NEXT_PUBLIC_STRAPI_URL}/partners-sections?populate=partners&populate=partners.icon`).then((res: any) => {
+            setData(res.data.data[0].attributes);
         })
     }, [])
 
-
     return (
         <S.SectionWrap id="sixthSection">
-            <Typography variant="h2">Our partners</Typography>
+            <Typography variant="h2">{data && data.name}</Typography>
             <S.PartnersWrap>
                 {
-                    data && data.map((el: any) => {
+                    data && data.partners.data.map((el: any) => {
                         return <S.PartnerIcon key={el.id} src={`http://localhost:1337${el.attributes.icon.data.attributes.url}`}></S.PartnerIcon>
                     })
                 }

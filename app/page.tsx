@@ -1,6 +1,6 @@
 'use client'
 // Core
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext, createContext } from 'react';
 
 // Styles
 import * as S from './styles';
@@ -20,33 +20,36 @@ import { Footer } from '../components/footer'
 // MUI
 import { CssBaseline, ThemeProvider } from '@mui/material';
 
+// MUI Theme
 import mainTheme from '../theme/theme'
 
-
+export const LocalContext = createContext<{ local: string, setLocal: React.Dispatch<React.SetStateAction<string>> }>({ local: 'en', setLocal: () => {} })
 
 
 export default function Home() {
     const [mounted, setMounted] = useState(false)
     useEffect(()=>setMounted(true),[])
 
-  return (
+    const [local, setLocal] = useState('en')
 
-    <ThemeProvider theme={mainTheme}>
-        <CssBaseline />
-        <S.Wrap style={{ visibility: mounted ? 'visible' : 'hidden' }}>
-          <Header />
-          <FirstSection />
-          <SecondSection />
-          <ThirdSection />
-          <FourthSection />
-          <FifthSection />
-          <SixthSection />
-          <SeventhSection />
-          <EighthSection />
-          <Footer />
-        </S.Wrap>
-    </ThemeProvider> 
-   
+  return (
+    <LocalContext.Provider value={{local, setLocal}}>
+      <ThemeProvider theme={mainTheme}>
+          <CssBaseline />
+          <S.Wrap style={{ visibility: mounted ? 'visible' : 'hidden' }}>
+            <Header />
+            <FirstSection />
+            <SecondSection />
+            <ThirdSection />
+            <FourthSection />
+            <FifthSection />
+            <SixthSection />
+            <SeventhSection />
+            <EighthSection />
+            <Footer />
+          </S.Wrap>
+      </ThemeProvider> 
+    </LocalContext.Provider>
   )
 }
 

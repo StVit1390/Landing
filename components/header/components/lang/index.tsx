@@ -1,34 +1,36 @@
 // Core
-import React, {FC, useState} from "react";
+import React, {FC, useContext, useState} from "react";
 
 // Style
 import * as S from './style'
 
 // MUI
-import { FormControl, MenuItem } from "@mui/material";
-import Select, { SelectChangeEvent } from '@mui/material/Select';
+import { MenuItem } from "@mui/material";
+import  { SelectChangeEvent } from '@mui/material/Select';
+
+// Context
+import { LocalContext } from "../../../../app/page";
 
 export const Lang:FC = () => {
 
-    const [lang, setLang] = useState('EN')
-   
+    const {local, setLocal} = useContext(LocalContext)
     const handleChange = (event: SelectChangeEvent) => {
-        setLang(event.target.value);
+        setLocal(event.target.value);
     };
-
+    
     return(
     
         <S.CustomFormControl >
             <S.CustomSelect
             sx={{borderRadius: '7px', outline: 'none'}}
-            value={lang}
+            value={local}
             onChange={handleChange}
             displayEmpty
             inputProps={{ 'aria-label': 'Without label' }}
             >
-                <MenuItem value="EN">EN</MenuItem>
-                <MenuItem value="PL">PL</MenuItem>
-                <MenuItem value="UA">UA</MenuItem>
+                <MenuItem value="en">EN</MenuItem>
+                <MenuItem value="pl">PL</MenuItem>
+                <MenuItem value="uk-UA">UA</MenuItem>
             </S.CustomSelect>
         </S.CustomFormControl>
         

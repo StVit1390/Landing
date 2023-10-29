@@ -17,10 +17,11 @@ export const FourthSection:FC = () => {
             setData(res.data.data[0]);
         })
     }, [])
+    
 
     return (
         <S.FourthSectionWrap id="fourthSection">
-            <Typography variant="h2">About us</Typography>
+            <Typography variant="h2">{data && data.attributes.name}</Typography>
             <S.FourthSectionContent>
                 <S.FirstFloor>
                     <S.FirstFloorLeft>

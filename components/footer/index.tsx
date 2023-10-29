@@ -22,9 +22,6 @@ export const Footer:FC = () => {
         })
     }, [])
 
-    console.log(data);
-    
-
     return (
         <S.SectionWrap bgImg={data && data.background.data.attributes.url}>
             <S.Logo src={`http://localhost:1337${data && data.logo.data.attributes.url}`}></S.Logo>

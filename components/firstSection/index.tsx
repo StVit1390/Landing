@@ -33,14 +33,14 @@ export const FirstSection:FC = () => {
             <S.LeftSide>
                 <S.BannerWrap>
                     <S.BannerContent>
-                        <S.Tittle>{data.title}</S.Tittle>
-                        <S.Content>{data.description}</S.Content>
+                        <S.Tittle variant="h1">{data.title}</S.Tittle>
+                        <S.Content variant="h4">{data.description}</S.Content>
                         <Button variant="contained" size="large">{data.btnName}</Button>
                     </S.BannerContent>
                 </S.BannerWrap>
             </S.LeftSide>
             <S.RightSide>
-                <S.IconWrap coordinates={{ x: '25px', y: '500px', }}>
+                {/* <S.IconWrap coordinates={{ x: '25px', y: '500px', }}>
                     <S.Icon src="/24hours.svg"></S.Icon>
                 </S.IconWrap>
                 <S.IconWrap coordinates={{ x: '120px', y: '220px', }}>
@@ -48,7 +48,7 @@ export const FirstSection:FC = () => {
                 </S.IconWrap>
                 <S.IconWrap coordinates={{ x: '450px', y: '300px', }}>
                     <S.Icon src="/aid-kit.svg"></S.Icon>
-                </S.IconWrap>
+                </S.IconWrap> */}
             </S.RightSide>
         </S.SectionWrap>
     )

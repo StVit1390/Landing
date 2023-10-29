@@ -1,4 +1,5 @@
 // MUI
+import { Typography } from '@mui/material'
 import { styled } from '@mui/system'
 
 export const SectionWrap = styled('section')`
@@ -13,6 +14,25 @@ export const SectionWrap = styled('section')`
     & h5 {
         margin-bottom: 15px;
     }
+
+    @media screen and (max-width: 1400px) {
+        padding: 50px 5%;
+    }
+    @media screen and (max-width: 1100px) {
+        padding: 50px 2%;
+    }
+`
+
+export const Tittle = styled(Typography)`
+    @media screen and (max-width: 750px) {
+            text-align: center;
+        }
+`
+
+export const Quote = styled(Typography)`
+    @media screen and (max-width: 750px) {
+            text-align: center;
+        }
 `
 
 export const Cards = styled('div')`

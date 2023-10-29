@@ -6,6 +6,12 @@ export const SectionWrap = styled('div')`
     display: flex;
     flex-direction: column;
     align-items: center;
+    @media screen and (max-width: 1400px) {
+        padding: 50px 5%;
+    }
+    @media screen and (max-width: 1100px) {
+        padding: 50px 2%;
+    }
 `
 
 export const FormWrap = styled('div')`
@@ -19,6 +25,9 @@ export const FormWrap = styled('div')`
     width: 100%;
     & button {
         margin-top: 50px;
+    }
+      @media screen and (max-width: 800px) {
+        padding: 30px 10px;
     }
     
 `
@@ -41,6 +50,9 @@ export const Label = styled('label')`
     margin-top: 50px;
     & p {
         margin-bottom: 20px;
+    }
+     @media screen and (max-width: 800px) {
+        width: 100%
     }
 `
 

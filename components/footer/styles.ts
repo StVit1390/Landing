@@ -14,6 +14,12 @@ export const SectionWrap = styled('section') <SectionWrapProps>`
     background-image: url(http://localhost:1337${({ bgImg }) => bgImg});
     background-repeat: no-repeat;
     background-size: cover;
+     @media screen and (max-width: 1400px) {
+            padding: 50px 10% 50px 5%;
+    }
+    @media screen and (max-width: 1000px) {
+        padding: 50px 2% 100px 2%;
+    }
 `
 
 export const Logo = styled('img')`
@@ -137,6 +143,10 @@ export const UpBtn = styled(Button)`
     & span {
         margin: 0;
     };
+    @media screen and (max-width: 1000px) {
+        bottom: 8%;
+        right: calc(50% - 32px);
+    }
    
 `
 
