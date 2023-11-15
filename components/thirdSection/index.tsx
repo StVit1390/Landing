@@ -1,5 +1,5 @@
 // Core
-import React, { FC, useState, useEffect } from "react";
+import React, { FC, useState, useEffect, useContext } from "react";
 
 // Tools
 import axios from "axios";
@@ -10,17 +10,21 @@ import { Button, Typography } from "@mui/material";
 
 // View
 import { AccountField } from './components/index';
-import { DonateBtn } from './styles';
+
+// Locale
+import { LocalContext } from '../../app/page'
 
 export const ThirdSection:FC = () => {
 
     const [data, setData] = useState<any>()
 
+    const { local } = useContext(LocalContext)
+
     useEffect(() => {
-        axios.get(`${process.env.NEXT_PUBLIC_STRAPI_URL}/second-banners/?populate=*`).then((res: any) => {
+        axios.get(`${process.env.NEXT_PUBLIC_STRAPI_URL}/second-banners/?populate=*&locale=${local}`).then((res: any) => {
             setData(res.data.data[0]);
         })
-    }, [])
+    }, [local])
 
     return (
         <S.SectionWrap  bgImg={data && data.attributes.coverImage.data.attributes.url}>
@@ -28,7 +32,7 @@ export const ThirdSection:FC = () => {
                 <S.BannerInfoWrap>
                     <S.Tittle variant="h1">{data && data.attributes.tittle}</S.Tittle>
                     <S.Description variant="h5">{data && data.attributes.description}</S.Description>
-                    <S.DonateBtn variant="outlined">Donate</S.DonateBtn>
+                    <S.DonateBtn variant="outlined">{data && data.attributes.btn}</S.DonateBtn>
                 </S.BannerInfoWrap>
             </S.BannerInfo>
             <S.BannerBanks>

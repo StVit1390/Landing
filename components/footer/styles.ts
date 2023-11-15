@@ -20,6 +20,9 @@ export const SectionWrap = styled('section') <SectionWrapProps>`
     @media screen and (max-width: 1000px) {
         padding: 50px 2% 100px 2%;
     }
+    @media screen and (max-width: 650px) {
+        flex-direction: column;
+    }
 `
 
 export const Logo = styled('img')`
@@ -27,6 +30,9 @@ export const Logo = styled('img')`
     border-radius: 12px;
     background-color: ${({theme})=> theme.palette.common.white};
     height: fit-content;
+    @media screen and (max-width: 950px) {
+        display: none ;
+    }
 `
 
 export const Nav = styled('div')`
@@ -35,6 +41,9 @@ export const Nav = styled('div')`
     & a {
         margin-bottom: 20px;
         color: ${({theme})=>theme.palette.common.white};
+    }
+    @media screen and (max-width: 6500px) {
+        margin-bottom: 30px;
     }
 `
 export const Btn = styled('a')`
@@ -47,6 +56,9 @@ export const Contacts = styled('div')`
     & h5 {
         color: ${({ theme }) => theme.palette.common.white};
         font-weight: 600;
+    }
+    @media screen and (max-width: 6500px) {
+        margin-bottom: 30px;
     }
 `
 
@@ -146,6 +158,9 @@ export const UpBtn = styled(Button)`
     @media screen and (max-width: 1000px) {
         bottom: 8%;
         right: calc(50% - 32px);
+    }
+    @media screen and (max-width: 650px) {
+        display: none;
     }
    
 `

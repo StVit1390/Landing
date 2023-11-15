@@ -4,7 +4,7 @@ import { styled } from '@mui/system'
 export const Field = styled('div')`
     display: flex;
     flex-direction: column;
-    background-color: ${({theme})=> theme.palette.background.paper };
+    background-color: ${({theme})=> theme.palette.background.custom2 };
     border-radius: 7px;
     padding: 16px 31px;
     position: relative;

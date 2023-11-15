@@ -48,6 +48,8 @@ export const SectionWrap = styled('section')<SectionWrapProps>`
 export const Contacts = styled('div')`  
     width: calc(33% - 10px);
     z-index: 1;
+    display: flex;
+    flex-direction: column;
      & h2{
         color: ${({ theme }) => theme.palette.common.white};
     }
@@ -64,6 +66,7 @@ export const Contacts = styled('div')`
     }
      @media screen and (max-width: 750px) {
         width: 100%;
+        align-items: center;
     }
 `
 
@@ -110,6 +113,7 @@ export const Map = styled('div')`
         display: flex;
         width: 100%;
         margin: 25px 0;
+        justify-content: center ;
     }
 `
 

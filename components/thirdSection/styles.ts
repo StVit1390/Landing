@@ -42,12 +42,19 @@ export const BannerInfoWrap = styled('div')`
     & > *:not(:last-child) {
     margin-bottom: 20px;
     }
+    @media screen and (max-width: 750px) {
+       align-items: center;
+       text-align: center;
+    }
 `
 
 export const Tittle = styled(Typography)`
     color: ${({theme})=>theme.palette.common.white};
-     @media screen and (max-width: 900px) {
+    @media screen and (max-width: 900px) {
         font-size: 3.5rem;
+    }
+    @media screen and (max-width: 500px) {
+        font-size: 3rem;
     }
 `
 

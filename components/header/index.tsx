@@ -1,5 +1,5 @@
 // Core
-import React, {FC, useContext, useEffect,useState} from 'react';
+import React, {FC, useContext, useEffect, useState} from 'react';
 
 // Styles 
 import * as S from './styles'
@@ -11,7 +11,6 @@ import { Lang } from './components/lang';
 import axios from 'axios';
 
 // MUI
-import { Button } from '@mui/material';
 import ChatOutlinedIcon from '@mui/icons-material/ChatOutlined';
 
 // Context
@@ -21,23 +20,22 @@ export const Header:FC = () => {
 
     const [data, setData] = useState({
         logo: '',
-        items: [{id: null, attributes:{link:'', item:'sample'}}]
+        items: [{id: null, attributes:{link:'', item:'sample'}}],
+        support: ''
     })
 
-    const {local} = useContext(LocalContext)
+    const {local, burger, setBurger} = useContext(LocalContext)
+
     useEffect(()=>{
         axios.get(`${process.env.NEXT_PUBLIC_STRAPI_URL}/headers/?populate=*&locale=${local}`).then((res:any) => {
             setData({
                 logo: res.data.data[0].attributes.logo.data.attributes.url,
                 items: res.data.data[0].attributes.menu_items.data,
+                support: res.data.data[0].attributes.support,
             })
         })
-    },[local]) // Header reqest
+    },[local])
 
-
-
-    
-    
     return (
         <S.Header id='header'>
             <S.LogoWrap>
@@ -50,8 +48,13 @@ export const Header:FC = () => {
             </S.NavMenu>
             <S.SupportUsWrap>
                 <Lang />
-                <S.SupportUs href='#eighthSection' variant='contained' color='primary' size="large" endIcon={<ChatOutlinedIcon />}> Support us</S.SupportUs>
+                <S.SupportUs href='#eighthSection' variant='contained' color='primary' size="large" endIcon={<ChatOutlinedIcon />}>{data.support}</S.SupportUs>
             </S.SupportUsWrap>
+            <S.BurgerWrap onClick={()=> setBurger(!burger)}>
+                <S.BurgerOne burger={burger} />
+                <S.BurgerTwo burger={burger}/>
+                <S.BurgerThree burger={burger} />
+            </S.BurgerWrap>
         </S.Header>
     )
 }

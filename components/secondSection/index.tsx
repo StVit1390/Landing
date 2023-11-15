@@ -1,11 +1,8 @@
 // Core
-import React, { FC, useEffect, useState } from 'react'
+import React, { FC, useEffect, useState, useContext } from 'react'
 
 // Tools
 import axios from 'axios'
-
-// MUI
-import { Typography } from '@mui/material'
 
 // View
 import { Card } from './components'
@@ -13,15 +10,20 @@ import { Card } from './components'
 // Styles
 import * as S from './styles'
 
+// Locale
+import { LocalContext } from '../../app/page'
+
 export const SecondSection:FC = () => {
    
     const [data, setData] = useState()
 
+    const { local } = useContext(LocalContext)
+
     useEffect(() => {
-        axios.get(`${process.env.NEXT_PUBLIC_STRAPI_URL}/our-projects/?populate=projects&populate=projects.img&populate=projects.waterMark`).then((res: any) => {
+        axios.get(`${process.env.NEXT_PUBLIC_STRAPI_URL}/our-projects/?populate=projects&populate=projects.img&populate=projects.waterMark&=*&locale=${local}`).then((res: any) => {
             setData(res.data.data[0].attributes);
         })
-    }, [])
+    }, [local])
     
     return (
         <S.SecondSectionWrap id="secondSection">
@@ -37,7 +39,8 @@ export const SecondSection:FC = () => {
                             description={el.attributes.description}
                             goal={el.attributes.goal}
                             img={el.attributes.img.data.attributes.url}
-                            waterMark={el.attributes.waterMark.data.attributes.url} />
+                            waterMark={el.attributes.waterMark.data.attributes.url} 
+                            btn={el.attributes.btn}/>
                     }else{
                         return <Card
                             justify={true}
@@ -47,7 +50,8 @@ export const SecondSection:FC = () => {
                             description={el.attributes.description}
                             goal={el.attributes.goal}
                             img={el.attributes.img.data.attributes.url}
-                            waterMark={el.attributes.waterMark.data.attributes.url} />
+                            waterMark={el.attributes.waterMark.data.attributes.url}
+                            btn={el.attributes.btn} />
                     }
                     
                 })}

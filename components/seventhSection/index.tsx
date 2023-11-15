@@ -1,5 +1,5 @@
 // Core
-import React, { FC, useState, useEffect } from "react";
+import React, { FC, useState, useEffect, useContext } from "react";
 
 // Tools
 import axios from "axios";
@@ -13,20 +13,24 @@ import { Typography } from "@mui/material";
 // View
 import { AccountField } from './components/index';
 
+// Context
+import { LocalContext } from '../../app/page';
+
 export const SeventhSection:FC = () => {
 
     const [data, setData] = useState<any>()
 
+    const { local } = useContext(LocalContext)
     useEffect(() => {
-        axios.get(`${process.env.NEXT_PUBLIC_STRAPI_URL}/contact-uses?populate=*`).then((res: any) => {
+        axios.get(`${process.env.NEXT_PUBLIC_STRAPI_URL}/contact-uses?populate=*&locale=${local}`).then((res: any) => {
             setData(res.data.data[0].attributes);
         })
-    }, [])
-    
+    }, [local])
+
     return (
         <S.SectionWrap id="seventhSection" bg={data && data.background.data.attributes.url} icon={data && data.logo.data.attributes.url}>
             <S.Contacts>
-                <Typography variant="h2">Contact us</Typography>
+                <Typography variant="h2">{data && data.tittle}</Typography>
                 {data && data.phones.data.map((el:any)=>{
                     return (
                         <S.PhoneWrap key={el.id}>

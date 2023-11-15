@@ -18,11 +18,11 @@ export const Card = styled('div') <CardProps>`
     width: 100%;
     border-radius: 10px;
     padding: 20px;
-    background-color: ${(props)=> props.theme.palette.background.default};
+    background-color: ${(props)=> props.theme.palette.background.custom1};
     flex-direction: ${({ justify }) =>  justify ? 'row-reverse' : 'row' };
     overflow: hidden;
-    @media screen and (max-width: 600px){
-        flex-direction: column-reverse;
+    @media screen and (max-width: 650px){
+        flex-direction: column;
     }
 `
 
@@ -35,7 +35,7 @@ export const ImgWrap = styled('div')`
         width: 40%;
         padding: 20px 10px;
     }
-    @media screen and (max-width: 600px){
+    @media screen and (max-width: 650px){
        width: 100%;
     }
 `
@@ -65,16 +65,24 @@ export const Content = styled('div') <ContentProps>`
     align-items: center;
     position: relative;
     &::before {
-        content: url(http://localhost:1337${props => props.waterMark});
+        content: '';
+        background-image: url(http://localhost:1337${props => props.waterMark});
         position: absolute;
         bottom: 5%;
         right: ${({ justify }) => justify ? '65%' : '5%' };
+        height: 150px;
+        width: 150px;
+        background-position: center;
+        background-size: contain;
+        @media screen and (max-width: 650px){
+        right: 5%;
+        }
     }
-     @media screen and (max-width: 1100px){
+    @media screen and (max-width: 1100px){
         width: 60%;
         padding: 20px 30px;
     }
-     @media screen and (max-width: 600px){
+    @media screen and (max-width: 650px){
        width: 100%;
     }
 
@@ -105,7 +113,7 @@ export const Goal = styled(Typography)`
 `
 
 export const DonateBtn = styled(Button)`
-    @media screen and (max-width: 1300px){
-        width: 100px;
+    @media screen and (max-width: 900px){
+        max-width: 50%;
     }
 `

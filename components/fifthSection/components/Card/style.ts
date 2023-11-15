@@ -32,7 +32,7 @@ export const Icon = styled('img')`
 `
 
 export const IconWrap = styled('div')`
-    background: ${({theme})=> theme.palette.background.default};
+    background: ${({theme})=> theme.palette.background.custom1};
     padding: 20px;
     border-radius: 11px;
     width: fit-content;

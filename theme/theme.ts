@@ -27,100 +27,91 @@ export const palette = {
 }
 
 const mainTheme = createTheme({
-    palette: {
-        common: {
-            black: palette.common.black,
-            white: palette.common.white,
-            
-        },
-        background: {
-            default: palette.background.default,
-            paper: palette.background.paper,
-            main: palette.background.main,
-            alternate: palette.background.alternate,
-        },
-
-        primary: {
-            main: palette.primary.main,
-        },
-        secondary:{
-            main: palette.secondary.main
-        },
-        text: {
-            primary: palette.text.primary,
-            alternate: palette.text.alternate,
-        },
-        
+  palette: {
+    text: {
+      primary: '#000',
+      secondary: '#2e2e2e',
     },
-    typography: {
-        h1: {
-            fontSize: '4.5rem',
-            fontWeight: 600, 
-        },
-        h2: {
-            fontSize: '3rem',
-            fontWeight: 600,
-        },
-        h3: {
-            fontSize: '2.25rem',
-            fontWeight: 600,
-        },
-        h4: {
-            fontSize: '1.5rem',
-            fontWeight: 600,
-        },
-        h5: {
-            fontSize: '1.25rem',
-            fontWeight: 500,
-        },
-        h6: {
-            fontSize: '1rem',
-            fontWeight: 500,
-        },
-        body1: {
-            fontSize: '1rem',
-        },
-        body2: {
-            fontSize: '0.875rem',
-        },
-        subtitle1: {
-            fontSize: '1rem',
-        },
-        subtitle2: {
-            fontSize: '0.75rem',
-        },
+    background: {
+      default: '#fff',
+      paper: '#fff',
+      body: '#fff',
+      custom1: '#f6f6f6',
+      custom2: '#f1f1f1',
+      custom3: '#ebebeb',
+      custom4: '#e2e2e2',
     },
-    components: {
-        MuiCssBaseline: {
-            styleOverrides: {
-
-            },
-        },
-        MuiButton: {
-            styleOverrides: {
-                root: {
-                    color: palette.common.white,
-                    height: '63px',
-                    width: '162px',
-                    borderRadius: '7px',
-                    justifyContent: 'space-around',
-                    textTransform: 'none'
-                },
-                sizeLarge: {
-                    width: '207px',
-                },
-                outlined: {
-                    color: palette.primary.main,
-                    background: palette.common.white,
-                    '&:hover': {
-                        background: palette.common.white
-                    }
-                    // border: 'none',
-                }
-            }
-        },
-
+    primary: {
+      main: '#10afab',
     },
-})
+    common: {
+      black: '#000',
+      white: '#fff',
+    },
+  },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          color: '#fff',
+          height: '63px',
+          width: '207px',
+          borderRadius: '7px',
+          justifyContent: 'space-around',
+          textTransform: 'none',
+          background: '#10afab',
+        },
+        sizeLarge: {
+          width: '207px',
+        },
+        outlined: {
+          color: '#10afab',
+          background: '#fff',
+          '&:hover': {
+            background: '#fff',
+          },
+        },
+      },
+    },
+  },
+  typography: {
+    h1: {
+      fontSize: '4.5rem',
+      fontWeight: 600,
+    },
+    h2: {
+      fontSize: '3rem',
+      fontWeight: 600,
+    },
+    h3: {
+      fontSize: '2.25rem',
+      fontWeight: 600,
+    },
+    h4: {
+      fontSize: '1.5rem',
+      fontWeight: 600,
+    },
+    h5: {
+      fontSize: '1.25rem',
+      fontWeight: 500,
+    },
+    h6: {
+      fontSize: '1rem',
+      fontWeight: 500,
+    },
+    body1: {
+      fontSize: '1rem',
+    },
+    body2: {
+      fontSize: '0.875rem',
+    },
+    subtitle1: {
+      fontSize: '1rem',
+    },
+    subtitle2: {
+      fontSize: '0.75rem',
+    },
+  },
+});
 
-export default mainTheme
+export default mainTheme;

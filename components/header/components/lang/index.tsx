@@ -30,7 +30,7 @@ export const Lang:FC = () => {
             >
                 <MenuItem value="en">EN</MenuItem>
                 <MenuItem value="pl">PL</MenuItem>
-                <MenuItem value="uk-UA">UA</MenuItem>
+                <MenuItem value="uk">UA</MenuItem>
             </S.CustomSelect>
         </S.CustomFormControl>
         

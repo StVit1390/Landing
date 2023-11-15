@@ -26,6 +26,7 @@ export const Cards = styled('div')`
   & > *:not(:last-child) {
     margin-bottom: 20px;
   }
+  margin-bottom: 100px;
 `;
 
 

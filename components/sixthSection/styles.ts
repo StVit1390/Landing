@@ -4,7 +4,7 @@ import { styled } from '@mui/system'
 
 export const SectionWrap = styled('section')`
     padding: 0 15%;
-    background: ${({theme})=>theme.palette.background.default};
+    background: ${({theme})=>theme.palette.background.custom1};
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -25,13 +25,13 @@ export const PartnerIcon = styled('img')`
     padding: 50px;
     margin: 5px;
     @media screen and (max-width: 900px) {
-        padding: 10px;
+        padding: 30px;
     }
     @media screen and (max-width: 800px) {
-        width: calc(25% - 10px);
+        width: calc(33% - 10px);
     }
     @media screen and (max-width: 450px) {
-        width: calc(33% - 10px);
+        width: calc(50% - 10px);
     }
 `
 

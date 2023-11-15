@@ -1,23 +1,43 @@
 // MUI
 import { styled } from '@mui/system'
-import { Typography } from '@mui/material'
+import { Button, Typography } from '@mui/material'
 
 // Color
 import {palette} from '../../theme/theme'
 ;
 
 interface SectionWrapProps {
-    img: string; // Определите тип img, например, string
+    bgImg: string; 
+    img: string
 }
 
 export const SectionWrap = styled('section')<SectionWrapProps>`
     display: flex;
-    background: rgb(231,231,231);
+    background: ${({theme})=> theme.palette.background.custom1};
     height: 673px;
-    background-image: url(${({img})=>img});
+    background-image: url(${({bgImg})=>bgImg});
     background-repeat: no-repeat;
-    background-position: center;
     padding: 0 15%;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        height: 670px;
+        width: 775px;
+        position: absolute;
+        right: 5%;
+        bottom: 0;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-image: url(${({img})=>img});
+        @media screen and (max-width: 900px) {
+            height: 550px;
+            width: 635px;
+            right: auto ;
+        }
+    }
+
     @media screen and (max-width: 1400px) {
         padding: 0 5%;
     }
@@ -26,7 +46,18 @@ export const SectionWrap = styled('section')<SectionWrapProps>`
         padding: 0 1%;
         display: flex;
         justify-content: center;
+        height: 1000px;
+        background-size: cover;
     }
+
+    @media screen and (max-width: 900px) {
+        height: 850px ;
+    }
+
+    @media screen and (max-width: 550px) {
+        height: 900px ;
+    }
+
 `
 
 export const LeftSide = styled('div')`
@@ -34,16 +65,22 @@ export const LeftSide = styled('div')`
     position: relative;
     align-items: center;
     justify-content: flex-end;
-    
+
+    @media screen and (max-width: 1100px) {
+        align-items: baseline ;
+        margin-top: 33px;
+    }
 `
 
 export const BannerWrap = styled('div')`
     display: flex;
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 22px;
     background: ${palette.common.white};
     align-items: center;
     justify-content: center;
+    max-width: 680px;
+    
 `
 
 export const BannerContent = styled('div')`
@@ -55,24 +92,43 @@ export const BannerContent = styled('div')`
     & > *:not(:last-child) {
     margin-bottom: 20px;
     }
+
+    @media screen and (max-width: 600px) {
+        align-items: center;  
+        text-align: center ;
+    }
 `
 
 export const Tittle = styled(Typography)`
     color: ${({theme})=> theme.palette.text.alternate};
     line-height: 110%;
     font-weight: 700;
+
     @media screen and (max-width: 700px) {
         font-size: 50px;
+    }
+
+    @media screen and (max-width: 550px) {
+        font-size: 40px;
+    }
+
+    @media screen and (max-width: 450px) {
+        font-size: 35px;
     }
 `
 export const Content = styled(Typography)`
     color: ${({ theme }) => theme.palette.text.alternate};
     line-height: 140%;
     font-weight: 500;
-    margin-top: 20px;
-     @media screen and (max-width: 700px) {
+
+    @media screen and (max-width: 700px) {
         font-size: 1.2rem;
     }
+
+    @media screen and (max-width: 550px) {
+        font-size: 1.1rem;
+    }
+
 `
 
 export const Help = styled('a')`
@@ -86,35 +142,6 @@ export const Help = styled('a')`
     margin-top: 30px;
 `
 
-
-export const RightSide = styled('div')`
-    display: flex;
-    position: relative;
+export const Btn = styled(Button)`
+    background-color: ${({theme})=> theme.palette.primary} !important;
 `
-
-interface coordinates {
-    x?: string,
-    y?: string,
-}
-
-
-
-export const IconWrap = styled('div')<coordinates>`
-    width: 79px;
-    height: 79px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    position: absolute;
-    top: ${({coordinates}) => coordinates.y||0};
-    left: ${({coordinates}) => coordinates.x||0};
-    backdrop-filter: blur(5px);
-    background: rgba(255, 255, 255, 0.2);
-`
-
-export const Icon = styled('img')`
-    width: 32px;
-    height: 32px;
-`
-

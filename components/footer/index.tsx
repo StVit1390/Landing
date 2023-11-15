@@ -1,5 +1,5 @@
 // Core
-import React, { FC, useState, useEffect } from "react";
+import React, { FC, useState, useEffect, useContext } from "react";
 
 // Tools
 import axios from "axios";
@@ -11,49 +11,48 @@ import * as S from './styles'
 import { Typography } from "@mui/material";
 import ExpandLessIcon from '@mui/icons-material//ExpandLess';
 
+// Context
+import { LocalContext } from '../../app/page';
+
 
 export const Footer:FC = () => {
 
     const [data, setData] = useState<any>()
-
+    const { local } = useContext(LocalContext)
     useEffect(() => {
-        axios.get(`${process.env.NEXT_PUBLIC_STRAPI_URL}/footers?populate=*`).then((res: any) => {
+        axios.get(`${process.env.NEXT_PUBLIC_STRAPI_URL}/footers?populate=*&locale=${local}`).then((res: any) => {
             setData(res.data.data[0].attributes);
         })
-    }, [])
+    }, [local])
 
     return (
         <S.SectionWrap bgImg={data && data.background.data.attributes.url}>
             <S.Logo src={`http://localhost:1337${data && data.logo.data.attributes.url}`}></S.Logo>
             <S.Nav>
-                <S.Btn href="#secondSection">
-                    <Typography variant="h5">Our projects</Typography>
-                </S.Btn>
-                <S.Btn href="#fourthSection">
-                    <Typography variant="h5">About us</Typography>
-                </S.Btn>
-                <S.Btn href="#sixthSection">
-                    <Typography variant="h5">Partners</Typography>
-                </S.Btn>
-                <S.Btn href="#seventhSection">
-                    <Typography variant="h5">Contact</Typography>
-                </S.Btn>
+                {data && data.menu_items.data.map((el:any)=>{
+                    return (
+                        <S.Btn key={el.id} href={`#${el.attributes.link}`}>
+                            <Typography variant="h5">{el.attributes.item}</Typography>
+                        </S.Btn>
+                    )
+                })}
+               
             </S.Nav>
             <S.Contacts>
-                <Typography variant="h5">Contacts:</Typography>
+                <Typography variant="h5">{data && data.contacts_tittle}:</Typography>
                 {data && data.phones.data.map((el:any)=>{
                     return(
                         <S.Contact key={el.id}>
-                            <Typography variant="h5">{el.attributes.phone.toString().replace(/(\d{2})(\d{3})(\d{3})(\d{3})/, "$1 $2 $3 $4")}</Typography>
+                            <Typography variant="h5">+ {el.attributes.phone.toString().replace(/(\d{2})(\d{3})(\d{3})(\d{3})/, "$1 $2 $3 $4")}</Typography>
                         </S.Contact>
                     )
                 })}
                 <S.Email>
-                    <Typography variant="h5">{data && data.email}</Typography>
+                    <Typography variant="h5">{data && data.email.data.attributes.email}</Typography>
                 </S.Email>
             </S.Contacts>
             <S.SocialMedia>
-                <Typography variant="h5">Social Media:</Typography>
+                <Typography variant="h5">{data && data.social_tittle}:</Typography>
                 <S.Links>
                     <S.Link href="#">
                         <S.SocialIcon src="/fb.svg"/>
