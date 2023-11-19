@@ -26,13 +26,14 @@ export const FirstSection:FC = () => {
     const { local } = useContext(LocalContext)
 
     useEffect(() => {
-        axios.get(`${process.env.NEXT_PUBLIC_STRAPI_URL}/main-banners/?populate=*&locale=${local}`).then((res: any) => {
+        axios.get(`${process.env.NEXT_PUBLIC_STRAPI_URL}/first-section/?populate=*&locale=${local}`).then((res: any) => {
+            
             setData({
-                bgImg: `http://localhost:1337${res.data.data[0].attributes.bgImg.data.attributes.url}`, 
-                img: `http://localhost:1337${res.data.data[0].attributes.img.data.attributes.url}`,
-                title: res.data.data[0].attributes.tittle,
-                description: res.data.data[0].attributes.description,
-                btnName: res.data.data[0].attributes.btnName,
+                bgImg: `http://localhost:1337${res.data.data.attributes.bgImg.data.attributes.url}`, 
+                img: `http://localhost:1337${res.data.data.attributes.img.data.attributes.url}`,
+                title: res.data.data.attributes.tittle,
+                description: res.data.data.attributes.description,
+                btnName: res.data.data.attributes.btnName,
             })
         })
     }, [local])

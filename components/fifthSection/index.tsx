@@ -19,8 +19,8 @@ export const FifthSection:FC = () => {
     const { local } = useContext(LocalContext)
 
     useEffect(() => {
-        axios.get(`${process.env.NEXT_PUBLIC_STRAPI_URL}/work-ins?populate=cards.icon&locale=${local}`).then((res: any) => {
-            setData(res.data.data[0]);
+        axios.get(`${process.env.NEXT_PUBLIC_STRAPI_URL}/fifth-section?populate=cards.icon&locale=${local}`).then((res: any) => {       
+            setData(res.data.data);
         })
     }, [local])
 

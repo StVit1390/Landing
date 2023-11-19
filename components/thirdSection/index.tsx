@@ -21,8 +21,8 @@ export const ThirdSection:FC = () => {
     const { local } = useContext(LocalContext)
 
     useEffect(() => {
-        axios.get(`${process.env.NEXT_PUBLIC_STRAPI_URL}/second-banners/?populate=*&locale=${local}`).then((res: any) => {
-            setData(res.data.data[0]);
+        axios.get(`${process.env.NEXT_PUBLIC_STRAPI_URL}/third-section/?populate=*&locale=${local}`).then((res: any) => {
+            setData(res.data.data);
         })
     }, [local])
 

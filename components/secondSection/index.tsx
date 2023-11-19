@@ -20,8 +20,8 @@ export const SecondSection:FC = () => {
     const { local } = useContext(LocalContext)
 
     useEffect(() => {
-        axios.get(`${process.env.NEXT_PUBLIC_STRAPI_URL}/our-projects/?populate=projects&populate=projects.img&populate=projects.waterMark&=*&locale=${local}`).then((res: any) => {
-            setData(res.data.data[0].attributes);
+        axios.get(`${process.env.NEXT_PUBLIC_STRAPI_URL}/second-section/?populate=projects&populate=projects.img&populate=projects.waterMark&=*&locale=${local}`).then((res: any) => {
+            setData(res.data.data.attributes);
         })
     }, [local])
     

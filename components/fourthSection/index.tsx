@@ -18,8 +18,8 @@ export const FourthSection:FC = () => {
     const { local } = useContext(LocalContext)
 
     useEffect(() => {
-        axios.get(`${process.env.NEXT_PUBLIC_STRAPI_URL}/about-uses/?populate=*&locale=${local}`).then((res: any) => {
-            setData(res.data.data[0]);
+        axios.get(`${process.env.NEXT_PUBLIC_STRAPI_URL}/fourth-section/?populate=*&locale=${local}`).then((res: any) => {
+            setData(res.data.data);
         })
     }, [local])
     

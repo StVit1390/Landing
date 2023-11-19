@@ -27,11 +27,12 @@ export const Header:FC = () => {
     const {local, burger, setBurger} = useContext(LocalContext)
 
     useEffect(()=>{
-        axios.get(`${process.env.NEXT_PUBLIC_STRAPI_URL}/headers/?populate=*&locale=${local}`).then((res:any) => {
+        axios.get(`${process.env.NEXT_PUBLIC_STRAPI_URL}/head/?populate=*&locale=${local}`).then((res:any) => {
+            
             setData({
-                logo: res.data.data[0].attributes.logo.data.attributes.url,
-                items: res.data.data[0].attributes.menu_items.data,
-                support: res.data.data[0].attributes.support,
+                logo: res.data.data.attributes.logo.data.attributes.url,
+                items: res.data.data.attributes.menu_items.data,
+                support: res.data.data.attributes.support,
             })
         })
     },[local])

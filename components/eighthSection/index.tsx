@@ -20,8 +20,8 @@ export const EighthSection:FC = () => {
     const { local } = useContext(LocalContext)
 
     useEffect(() => {
-        axios.get(`${process.env.NEXT_PUBLIC_STRAPI_URL}/support-templates/?populate=*&locale=${local}`).then((res: any) => {
-            setData(res.data.data[0].attributes)
+        axios.get(`${process.env.NEXT_PUBLIC_STRAPI_URL}/eighth-section/?populate=*&locale=${local}`).then((res: any) => {
+            setData(res.data.data.attributes)
         })
     }, [local])
 
@@ -160,7 +160,7 @@ export const EighthSection:FC = () => {
                         setFormValues(init)
                         setErr(false)
                     }
-                }}>Send</Button>
+                }}>{data && data.btn}</Button>
             </S.FormWrap>
         </S.SectionWrap>
     )

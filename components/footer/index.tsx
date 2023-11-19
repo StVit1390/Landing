@@ -20,8 +20,8 @@ export const Footer:FC = () => {
     const [data, setData] = useState<any>()
     const { local } = useContext(LocalContext)
     useEffect(() => {
-        axios.get(`${process.env.NEXT_PUBLIC_STRAPI_URL}/footers?populate=*&locale=${local}`).then((res: any) => {
-            setData(res.data.data[0].attributes);
+        axios.get(`${process.env.NEXT_PUBLIC_STRAPI_URL}/footer-section?populate=*&locale=${local}`).then((res: any) => {
+            setData(res.data.data.attributes);
         })
     }, [local])
 
